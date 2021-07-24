@@ -24,8 +24,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //Make sure that the diectory for compiled views is available
-        // if(! is_dir(config('view.compiled'))){
-        //     mkdir(config('view.compiled'), 0755, true);
-        // }
+        if(! is_dir(config('view.compiled'))){
+            mkdir(config('view.compiled'), 0755, true);
+        }
     }
 }
