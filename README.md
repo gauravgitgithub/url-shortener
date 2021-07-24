@@ -4,7 +4,7 @@
 
 Shortener is a simple yet powerful URL Shortening tool, which can be used to hash long urls for tracking/campaigns.
 
-- [Working Demo](https://hw9k1iteij.execute-api.ap-south-1.amazonaws.com/).
+<p align="center"><a href="https://hw9k1iteij.execute-api.ap-south-1.amazonaws.com/" target="_blank">Demo</a></p>
 
 - [Clone the Repository](https://github.com/gauravgitgithub/url-shortener.git).
 - Copy .env.example file - cp .env.example .env
