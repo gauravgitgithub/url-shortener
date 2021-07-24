@@ -10,6 +10,8 @@ class CreateLink extends Component
     use AuthorizesRequests;
 
     public $original;
+    public $isforsingleuse = false;
+    public $isExpired = false;
     protected $linkLength = 6;
     protected $linksAllowedForFreePlan = 10;
     protected $linksAllowedForPremiumPlan = 500;
@@ -19,13 +21,15 @@ class CreateLink extends Component
      **/
     public function submit()
     {
-        $this->validate(['original' => 'required|url']);
+        $this->validate(['original' => 'required|url','isforsingleuse' => 'boolean']);
 
         $this->authorizeCreatingLink();
 
         auth()->user()->links()->create([
             'original' => $this->original,
             'shortened' => $this->generateShortLink(),
+            'is_for_single_use_only' => $this->isforsingleuse,
+            'is_expired' => $this->isExpired
         ]);
 
         $this->emit('linkCreated');

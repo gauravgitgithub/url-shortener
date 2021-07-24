@@ -22,6 +22,14 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::get('/{link:shortened}', function(App\Models\Link $link) {
+    if($link->is_for_single_use_only){
+        if($link->is_expired){
+            return abort(404);
+        }else{
+            $link->is_expired = true;
+            $link->save();
+        }
+    }
     $link->increment('views');
 
     return redirect($link->original);

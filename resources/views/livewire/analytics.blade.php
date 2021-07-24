@@ -15,6 +15,12 @@
                 <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                     Views
                 </th>
+                <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                    For Single Use
+                </th>
+                <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                    Is Expired
+                </th>
                 <th class="px-6 py-3 bg-gray-50"></th>
                 </tr>
             </thead>
@@ -31,6 +37,20 @@
                         </td>
                         <td class="px-6 py-4 whitespace-no-wrap">
                             {{ number_format($link->views) }}
+                        </td>
+                        <td class="px-6 py-4 whitespace-no-wrap">
+                            @if($link->is_for_single_use_only == 1)
+                                <label style="color:orange;" >true</label>
+                            @else
+                                <label style="color:teal;" >false</label>
+                            @endif
+                        </td>
+                        <td class="px-6 py-4 whitespace-no-wrap">
+                            @if($link->is_expired == 1)
+                                <label style="color:red;" >true</label>
+                            @else
+                                <label style="color:green;" >false</label>
+                            @endif
                         </td>
                         <td class="px-6 py-4 whitespace-no-wrap text-right text-sm leading-5 font-medium">
                             <button wire:click="deleteLink({{ $link->id }})" class="text-red-500">Delete</button>

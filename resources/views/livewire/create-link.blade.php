@@ -8,7 +8,10 @@
                     <x-jet-label value="Original URL" />
                     <x-jet-input class="block mt-1 w-full" type="text" name="original" wire:model="original" :value="old('original')" required autofocus />
                 </div>
-
+                <div class="flex justify-start">
+                <x-jet-checkbox type="checkbox" name="isforsingleuse" wire:model="isforsingleuse" :value="old('isforsingleuse')" />
+                Is for single use ?
+                </div>
                 <div class="flex justify-end">
                     <x-jet-button class="mt-4 bg-green-500"> Create short url </x-jet-button>
                 </div>
