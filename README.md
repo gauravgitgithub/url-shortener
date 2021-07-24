@@ -5,12 +5,12 @@
 Shortener is a simple yet powerful URL Shortening tool, which can be used to hash long urls for tracking/campaigns.
 
 - [Clone the Repository](https://github.com/gauravgitgithub/url-shortener.git).
-- [Copy .env.example file](cp .env.example .env).
-- [Install dependencies](composer install).
-- [Install NPM Modules for frontend](npm i && npm run dev).
-- [Generate Key](php artisan key:generate).
-- [Run migrations](php artisan migrate).
-- [Serve](php artisan serve).
+- Copy .env.example file - cp .env.example .env
+- Install dependencies] - composer install
+- Install NPM Modules for frontend - npm i && npm run dev
+- Generate Key - php artisan key:generate
+- Run migrations - php artisan migrate
+- Serve - php artisan serve
 
 ## License
 
